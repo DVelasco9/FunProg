@@ -1,0 +1,135 @@
+La abarrotera "Kamarena" necesita trabajar en un sistema que le ayude a registrar de manera fácil y rápida todos sus pedidos, hubo una explosión en el mercado al otro lado de la ciudad y ellos han quedado como el único lugar disponible para comprar, esa idea de poner una bomba ha salido terriblemente bien (no hubo ningún herido).
+
+Mientras el dueño sigue luchando entre entregarse a las autoridades por lo sucedido y pedir perdón a las familias involucradas, ha pedido a su asesor externo, el "Teclas" que le ayude con un sistema.
+
+Para ingresar al sistema debe pedir una contraseña (Mientras), que debe ser una fecha de nacimiento en formato YYYY-MM-DD, una vez en el sistema, debe preguntar si (Si) quiere hacer registros de zanahorias o de tomates.
+
+Si elige zanahorias, deberá pedir que se ingresen cuántas cajas deberá ingresar (Para), como cada caja tiene un valor diferente, habrá que ingresarlo manualmente una por una.
+
+Si elige tomates, deberá ingresar cuantas cajas se necesiten y cuando escriba el número 100001 deberá terminar de registrar (Mientras).
+
+En ambos casos, deberá qué opción se eligió y mostrar cuántas cajas se añadieron, cuánto fue el total del peso y cuánto fue el costo total de esa venta, las zanahorias cuestan $15.84 el kilo y los tomates cuestan $11.34 el kilo, si (Si) la venta supera los $10,000, se le hará un descuento automático del 7.5% del valor total.
+
+Finalmente, deberá preguntar si (Si) el cliente necesita o no envío, si requiere envío deberá añadir $150 más a su pedido, de lo contrario, mostrará el precio anterior.
+
+Algoritmo Al_Qatala
+	Escribir "Introduzca la contraseña para ingresar al sistema "
+	Leer contraseña
+	
+	Mientras contraseña <> "20061025" Hacer
+		Escribir "Contraseña incorrecta, vuelva a introducirla"
+		Leer contraseña
+	FinMientras
+	
+	Mostrar "Si quiere registrar zanahorias coloque Z, si quiere registrar tomates, coloque T"
+	Leer registro
+	
+	
+	Si registro = "Z" Entonces
+		Escribir "Cuantas cajas de zanahoria va a registrar"
+		total <- 0
+		
+		Definir cajas Como Entero
+		Leer cajas
+		
+		kilos <- 0
+		Para i <- 1 Hasta cajas Hacer
+			Escribir "Ingrese el peso de la caja ", i, ":"
+			Leer pesocaja
+			precio <- pesocaja * 15.84
+			total <- total + precio
+			kilos <- kilos + pesocaja
+
+		Fin Para
+		
+		Mostrar "Usted escogió Zanahorias"
+		Mostrar "Se registraron ", cajas " cajas"
+		Mostrar "El total del peso fue de ", kilos , " kilos" 
+		Mostrar "La venta total fue de $", total
+		
+		Si total >= 10000 Entonces
+			descuentoz <- total * 0.075
+			total <- total - descuentoz
+			Mostrar "El costo total con el descuento fue de $" total
+		Fin Si
+		
+		Mostrar "Necesita envio? "
+		Leer pregunta
+		
+		Si pregunta = "Si" Entonces
+			Mostrar "usted escogió que necesita envio, por lo tanto se le añaden $150 mas a su total"
+			totalz <- total + 150
+			Mostrar "El costo final fue de $" totalz
+		SiNo
+			Mostrar "El costo se queda igual $", total
+		Fin Si
+		
+	SiNo
+		Si registro = "T" Entonces
+			venta <- 0
+			totalCajas <- 0   
+			
+			cajast <- 0  
+			
+			Mientras cajast <> 100001 Hacer
+				Mostrar "Para quitar el sistema de los tomates, coloque 100001"
+				Mostrar "Proporcione la cantidad de cajas de tomates que va a registrar: "
+				Leer cajast
+				
+				Si cajast <> 100001 Entonces
+					preciot <- cajast * 11.34
+					venta <- venta + preciot
+					totalCajas <- totalCajas + cajast  
+				FinSi
+				
+			FinMientras
+			
+			Mostrar "Usted escogió tomates"
+			Mostrar "Se registraron ", totalCajas, " cajas"  
+			Mostrar "El total del peso fue de ", totalCajas, " kilos"  
+			Mostrar "La venta total fue de $", venta 
+			
+			Si venta >= 10000 Entonces
+				descuento <- venta * 0.075
+				venta <- venta - descuento
+				Mostrar "Se aplicó un descuento de $", descuento
+				Mostrar "El costo total con descuento fue de $", venta
+			FinSi
+			
+			Mostrar "Necesita envio? "
+			Leer pregunta
+			
+			Si pregunta = "Si" Entonces
+				Mostrar "usted escogió que necesita envio, por lo tanto se le añaden $150 mas a su total"
+				totalv <- venta + 150
+				Mostrar "La venta total fue de $", totalv
+			SiNo
+				Mostrar "El costo se queda igual $", venta
+			Fin Si
+			
+			
+		SiNo
+			Mostrar "CEBOLLA"
+		Fin Si
+		
+	Fin Si
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Introduzca la contraseña para ingresar al sistema
+> 20061025
+Si quiere registrar zanahorias coloque Z, si quiere registrar tomates, coloque T
+> Z
+Cuantas cajas de zanahoria va a registrar
+> 1
+Ingrese el peso de la caja 1:
+> 5
+Usted escogió Zanahorias
+Se registraron 1 cajas
+El total del peso fue de 5 kilos
+La venta total fue de $79.2
+Necesita envio?
+> Si
+usted escogió que necesita envio, por lo tanto se le añaden $150 mas a su total
+El costo final fue de $229.2
+*** Ejecución Finalizada. ***
