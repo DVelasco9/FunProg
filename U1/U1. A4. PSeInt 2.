@@ -1,3 +1,7 @@
+Realiza un programa para calcular el área sombreada roja de la siguiente figura, ingresando solo el radio del círculo y la hipotenusa del triángulo. Considera el valor de π como 3.1416.
+
+El resultado se debe mostrar en m2.
+
 Algoritmo Calcular_el_area_sombreada
 	Escribir "Ingrese los datos del radio: "
 	leer datos_radio
@@ -17,3 +21,12 @@ Algoritmo Calcular_el_area_sombreada
 	A_shad <- A_res + Area_tri
 	Mostrar "El resultado del area sombreada es ", A_shad
 FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese los datos del radio:
+> 5
+Ingrese el dato de la hipotenusa:
+> 10
+El resultado del area sombreada es 53.1187701892
+*** Ejecución Finalizada. ***
+
