@@ -1,0 +1,89 @@
+La empresa de manufactura "ACME", necesita un nuevo control para gestionar su inventario por el área correspondiente, últimamente el turno de la tarde parece "multiplicar" la producción por las noches cuando sale el supervisor, lo cual ha generado pérdidas en la empresa.
+
+Ahora, necesitan añadir accesos para registrar la producción diaria, para ello necesitan un sistema protegido por contraseña de al menos 6 caracteres, de 3 letras, al menos 1 mayúsculas y 3 números que no sean consecutivos. Deberá poner un mensaje que diga que se debe llamar al supervisor si la contraseña es incorrecta, de lo contrario, deberá mostrar un mensaje de bienvenida.
+
+Una vez ingresado el sistema, deberá poder registrar las piezas fabricadas, para ello, el sistema deberá pedir la cantidad de piezas que se quieren añadir y permitir el registro, el supervisor deberá poder ingresar todas las piezas que requiera y para terminar el ingreso deberá ingresar 4 ceros consecutivos.
+
+Al terminar, deberá mostrar la suma total de las piezas fabricadas, si el total de esas ventas es mayor a 10,000 unidades deberá mostrar un mensaje de que se ha cumplido la meta, de lo contrario, deberá mostrar una alerta para producción.
+
+Algoritmo ATR
+	Escribir "Introduce la contraseña:"
+    Leer contraseña
+	
+    Mientras contraseña <> "WaSdLiZZie100692" Hacer
+        Escribir "Contraseña incorrecta. Llame al supervisor"
+        Leer contraseña
+    FinMientras
+	
+	
+	Mostrar "//////////////////////////////////////////"
+    Escribir "   Bienvenido al sistema de registros    "
+	Mostrar "//////////////////////////////////////////"
+	piezas <- 0
+	
+    Escribir "Ingresé la cantidad de piezas fabricadas (escriba 0000 para salir):"
+    Leer piezas
+	
+	total <- 0 
+    Mientras piezas <> 0000 Hacer
+        total <- total + piezas
+        Escribir "Ingresé la otra cantidad de piezas fabricadas (escriba 0000 para salir):"
+        Leer piezas
+    FinMientras
+	
+	Mostrar "///////////////////////////////////"
+	Mostrar "//       Registro de ventas      //"
+	Mostrar "///////////////////////////////////"
+	
+    Escribir "Ingresé las ventas de las piezas registradas,respectivamente (escriba 0000 para salir):"
+    Leer ventas
+	
+	sell <- 0 
+    Mientras ventas <> 0000 Hacer
+        sell <- sell + ventas
+        Escribir "Ingresé la otra parte de las ventas de las piezas (escriba 0000 para salir):"
+        Leer ventas
+    FinMientras
+	
+    Escribir "La cantidad de piezas fabricadas fue de: ", total
+	Escribir "La venta total fue de: ", sell
+	
+	Si sell < 10000 Entonces
+		Mostrar "//////////////////////////////////////////////////////"
+		Mostrar "   Llamen al supervisor, la meta no se ha cumplido    "
+		Mostrar "//////////////////////////////////////////////////////"
+	SiNo
+		Mostrar "//////////////////////////////////////////////////////"
+		mostrar "      La meta se cumplió, nadie va a ir a RR.HH       "
+		Mostrar "//////////////////////////////////////////////////////"
+	Fin Si
+	
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Introduce la contraseña:
+> WaSdLiZZie100692
+//////////////////////////////////////////
+   Bienvenido al sistema de registros
+//////////////////////////////////////////
+Ingresé la cantidad de piezas fabricadas (escriba 0000 para salir):
+> 5
+Ingresé la otra cantidad de piezas fabricadas (escriba 0000 para salir):
+> 7
+Ingresé la otra cantidad de piezas fabricadas (escriba 0000 para salir):
+> 0000
+///////////////////////////////////
+//       Registro de ventas      //
+///////////////////////////////////
+Ingresé las ventas de las piezas registradas,respectivamente (escriba 0000 para salir):
+> 8000
+Ingresé la otra parte de las ventas de las piezas (escriba 0000 para salir):
+> 12000
+Ingresé la otra parte de las ventas de las piezas (escriba 0000 para salir):
+> 0000
+La cantidad de piezas fabricadas fue de: 12
+La venta total fue de: 20000
+//////////////////////////////////////////////////////
+      La meta se cumplió, nadie va a ir a RR.HH
+//////////////////////////////////////////////////////
+*** Ejecución Finalizada. ***
