@@ -1,0 +1,19 @@
+Algoritmo Calcular_el_area_sombreada
+	Escribir "Ingrese los datos del radio: "
+	leer datos_radio
+	Escribir "Ingrese el dato de la hipotenusa: "
+	Leer hipotenusa
+	
+	teorema <- rc((hipotenusa)^2 - (datos_radio)^2)
+
+	Area_tri <- ((datos_radio * 2)*(teorema))/2
+	
+	A_circ <- (3.1416 * (datos_radio/2)^2)/2
+
+	A_circ4 <- (3.1416 * (datos_radio)^2)/4
+	
+	A_res <- A_circ4 - A_circ
+	
+	A_shad <- A_res + Area_tri
+	Mostrar "El resultado del area sombreada es ", A_shad
+FinAlgoritmo
