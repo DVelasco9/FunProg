@@ -1,0 +1,63 @@
+Una zapatera necesita registrar los datos de sus vendedores y los datos de las ventas individuales para calcular algunos estándares de calidad a fin de mejorar la productividad y otorgar bonos, así como "cortar cabezas". 
+
+El sistema debe solicitar el a cuántos vendedores se va a registrar su información y de cada vendedor debe solicitar cuántas ventas realizó y de cuánto fue el valor de cada una. 
+
+Después de terminar el registro de las ventas, debe mostrar el total de las ventas de ese vendedor, el número de ventas que hizo y su venta más alta. Si la venta más alta es menor a $100 o el total es menor de $1,500, debe mostrar un mensaje de que pase a Recursos Humanos. 
+
+El reporte final debe entregar un reporte de cuántos vendedores se registraron en el sistema y cuánto fue el total de las ventas globales de la empresa . Si el reporte global es mayor a $20,000 deberá mostrar un mensaje de que se alcanzó la meta , de lo contrario mostrará un mensaje que habrá que convocar una reunión . 
+
+Algoritmo For2
+	Escribir "Coloque la cantidad de vendedores"
+	Leer vendedores
+	total_empresa <- 0
+	
+	Para i = 1 Hasta vendedores
+		total <- 0
+		Escribir "Ventas registradas del vendedor ", i, ":"
+		Leer venta
+		Para g = 1 Hasta venta
+			Escribir "Valor de las venta ", g ,":"
+			Leer val_ventas
+			total <- total + val_ventas
+		FinPara
+		
+		
+		Mostrar "El vendedor ", i, " hizo ", g - 1 ," ventas"
+		Mostrar "La venta total del vendedor ", i, " fue de $", total 
+		Si val_ventas < 100 o total < 1500 Entonces
+			Mostrar "El vendedor ", i," deberá pasar a recursos humanos"
+		SiNo
+			Mostrar "Sus ventas fueron exitosas"
+		Fin Si
+		
+		Mostrar "**********************************"
+		
+		total_empresa <- total_empresa + total
+	FinPara
+	
+	Mostrar "La cantidad de vendedores registrados fueron de " i
+	Mostrar "El total de la empresa fue de $", total_empresa ", por lo tanto"
+	Si total_empresa < 20000 Entonces
+		Mostrar "Todos los vendedores han sido convocados a una reunión"
+	SiNo
+		Mostrar "La meta se ha alcanzado"
+	Fin Si
+	
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Coloque la cantidad de vendedores
+> 1
+Ventas registradas del vendedor 1:
+> 1
+Valor de las venta 1:
+> 10000000
+El vendedor 1 hizo 1 ventas
+La venta total del vendedor 1 fue de $10000000
+Sus ventas fueron exitosas
+**********************************
+La cantidad de vendedores registrados fueron de 2
+El total de la empresa fue de $10000000, por lo tanto
+La meta se ha alcanzado
+*** Ejecución Finalizada. ***
+
