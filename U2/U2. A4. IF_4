@@ -1,0 +1,130 @@
+El programador sigue teniendo complicaciones para ajustar su código cuando ingresan valores, pero necesita ayuda, ahora su jefe, que no conoce mucho de programación, quiere un programa para calcular los rendimientos de 4 vendedores y ver la diferencia entre estos.
+
+El programa debe recibir los 4 valores de los vendedores, que se calcula en ventas por mes, después, el programa debe ordenarlos de menor a mayor, siendo 4 el mayor y 1 el menor, una vez hecho esto debe hacer las siguientes operaciones.
+
+Mostrar los números ordenados
+El resultado del 4 menos el 1
+El resultado del 2 menos el 1
+El resultado del 4 menos el 3
+El resultado del 3 menos el 2
+La suma de todas las ventas y el promedio general
+
+Algoritmo rendimiento
+	//DATOS
+	Escribir "Proporcione las ventas netas y el costo de las ventas del primer vendedor"
+	Definir ventasn1, ventasn2, ventasn3, ventasn4, costov1, costov2, costov3, costov4  Como Real
+
+	Leer ventasn1
+	leer costov1
+	
+	Escribir "Proporcione las ventas netas y el costo de las ventas del segundo vendedor"
+	Leer ventasn2
+	leer costov2
+	
+	Escribir "Proporcione las ventas netas y el costo de las ventas del tercer vendedor"
+	Leer ventasn3
+	leer costov3
+	
+	Escribir "Proporcione las ventas netas y el costo de las ventas del cuarto vendedor"
+	Leer ventasn4
+	leer costov4
+	
+	
+	//El rendimiento de una venta se calcula dividiendo el beneficio bruto entre las ventas netas
+	//OPERACIONES
+	bruto1 <- ventasn1 - costov1 
+	bruto2 <- ventasn2 - costov2
+	bruto3 <- ventasn3 - costov3
+	bruto4 <- ventasn4 - costov4
+	
+	rendimiento1 <- (bruto1/ventasn1)*100
+	Mostrar rendimiento1, "%"
+	rendimiento2 <- (bruto2/ventasn2)*100
+	Mostrar rendimiento2, "%"
+	rendimiento3 <- (bruto3/ventasn3)*100
+	Mostrar rendimiento3, "%"
+	rendimiento4 <- (bruto4/ventasn4)*100
+	Mostrar rendimiento4, "%"
+	
+	Definir lz Como Real
+	
+	Si rendimiento1 > rendimiento2 Entonces
+		lz <- rendimiento1
+		rendimiento1 <- rendimiento2
+		rendimiento2 <- lz
+	Fin Si
+	
+	Si rendimiento2 > rendimiento3 Entonces
+		lz <- rendimiento2
+		rendimiento2 <- rendimiento3
+		rendimiento3 <- lz
+	Fin Si
+	
+	Si rendimiento3 > rendimiento4 Entonces
+		lz<- rendimiento3
+		rendimiento3 <- rendimiento4
+		rendimiento4 <- lz
+	Fin Si
+	
+	Si rendimiento1 > rendimiento2 Entonces
+		lz <- rendimiento1
+		rendimiento1 <- rendimiento2
+		rendimiento2 <- lz
+	Fin Si
+	
+	Si rendimiento2 > rendimiento3 Entonces
+		lz <- rendimiento2
+		rendimiento2 <- rendimiento3
+		rendimiento3 <- lz
+	Fin Si
+	
+	Si rendimiento1 > rendimiento2 Entonces
+		lz <- rendimiento1
+		rendimiento1 <- rendimiento2
+		rendimiento2 <- lz
+	Fin Si
+	
+	//RESULTADOS
+	Mostrar "El primero es ", rendimiento1, ", el segundo es ", rendimiento2, ", el tercero es ", rendimiento3, ", el numero 4 es ", rendimiento4
+	
+	res1 <- rendimiento4 - rendimiento1
+	res2 <- rendimiento2 - rendimiento1
+	res3 <- rendimiento4 - rendimiento3
+	res4 <- rendimiento3 - rendimiento2
+	
+	Mostrar "El resultado del 4 menos el 1 es ", res1
+	Mostrar "El resultado del 2 menos el 1 es ", res2
+	Mostrar "El resultado del 4 menos el 3 es ", res3
+	Mostrar "El resultado del 3 menos el 2 es ", res4
+
+	
+	Ganancias <- bruto1 + bruto2 + bruto3 + bruto4
+	total <- Ganancias/4
+	Mostrar "Las ventas totales fueron de $", ganancias, " y el promedio fue de $", total
+	
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Proporcione las ventas netas y el costo de las ventas del primer vendedor
+> 12000
+> 5000
+Proporcione las ventas netas y el costo de las ventas del segundo vendedor
+> 30000
+> 15000
+Proporcione las ventas netas y el costo de las ventas del tercer vendedor
+> 6700
+> 400
+Proporcione las ventas netas y el costo de las ventas del cuarto vendedor
+> 5467
+> 879
+58.3333333333%
+50%
+94.0298507463%
+83.9217120907%
+El primero es 50, el segundo es 58.3333333333, el tercero es 83.9217120907, el numero 4 es 94.0298507463
+El resultado del 4 menos el 1 es 44.0298507463
+El resultado del 2 menos el 1 es 8.3333333333
+El resultado del 4 menos el 3 es 10.1081386555
+El resultado del 3 menos el 2 es 25.5883787574
+Las ventas totales fueron de $32888 y el promedio fue de $8222
+*** Ejecución Finalizada. ***
