@@ -1,0 +1,39 @@
+Si el usuario ingresa 5045 bytes, este se divide entre 1024 y el mensaje debería ser 4.92 KB. 
+
+Usa este enlace para validar la información. https://discoveryformacion.com/calculadora-para-convertir-unidades-de-almacenamiento-informaticas/
+
+Algoritmo CONVERSOR_DE_BYTES
+	Escribir "Ingrese la cantidad de Bytes a convertir: "
+	Definir bytes Como Real
+	Leer bytes
+	kb <- bytes/2^10
+	mb <- bytes/2^20
+	gb <- bytes/2^30
+	tb <- bytes/2^40
+	pb <- bytes/2^50
+	
+	Mostrar "La cantidad de bytes son: ", bytes
+	Si bytes >= 2^10 Y bytes < 2^20 Entonces
+		mostrar " Los Kb son: ", kb
+	Fin Si
+	Si bytes >= 2^20 Y bytes < 2^30 Entonces
+		mostrar " Los Mb son: ", mb
+	FinSi
+	Si bytes >= 2^30 Y bytes < 2^40 Entonces
+		mostrar " Los Gb son: ", gb
+	Fin Si
+	Si bytes >= 2^40 Y bytes < 2^50 Entonces
+		mostrar " Los Tb son: ", tb
+	Fin Si
+	Si bytes >= 2^50 Entonces
+		mostrar " Los Pb son: ", pb
+	Fin Si
+	
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese la cantidad de Bytes a convertir:
+> 5045
+La cantidad de bytes son: 5045
+ Los Kb son: 4.9267578125
+*** Ejecución Finalizada. ***
