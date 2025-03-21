@@ -4,6 +4,9 @@ Usando operadores, deberá validar si el alumno aprobó con una calificación ig
 
 La respuesta debe mostrar el nombre del alumno, su edad, y el valor de cada instrumento, su promedio final, y mostrar si el alumno aprobó con un Verdadero o Falso.
 
+Este texto es de otra rama ;)
+
+SSDSEFDS
 Algoritmo programa_para_calcular_calificaciones
 	Mostrar ("Coloque su nombre, edad, calificación de examen, de tareas y de trabajos en clase respectivamente")
 	Leer nombre
