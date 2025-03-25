@@ -1,0 +1,52 @@
+//Diseña un algoritmo que emplee subprogramas / funciones / subprocesos, para calcular el área y volumen de 3 figuras geométricas diferentes. 
+
+//El usuario debe poder elegir cuál figura desea calcular y mostrar sus resultados, el programa debe poder repetirse si el usuario lo desea y elegir otra opción.
+
+SubProceso calculos(n)
+	Si n = "cuadrado" Entonces
+		Escribir "Proporcione la medida de un lado del cubo: "
+		Leer L
+		Mostrar "El área del cubo es de ", L*L," U^2"
+		Mostrar "El volumen del cubo es de ", L*L*L," U^3"
+	SiNo
+		Si n = "rectangulo" Entonces
+			Escribir "Proporcione la altura del rectangulo: "
+			Leer altura
+			Escribir "Proporcione el largo del rectangulo: "
+			Leer largo
+			Escribir "el ancho: "
+			Leer ancho
+			Mostrar "El área es ", largo * altura " U^2"
+			Mostrar "El volumen es ", largo * altura * ancho " U^3"
+		SiNo
+			Si n = "cilindro" Entonces
+				Escribir "Altura del cilindro: "
+				Leer altura
+				Escribir "Radio del cilindro: "
+				Leer radio 
+				Mostrar "El área del cilidnro es de ", 2 * pi * radio^2 + 2 * pi * radio * altura ," U^2"
+				Mostrar "El volumen del cilindro es de ", pi * radio^2 * altura," U^3"
+			SiNo
+				Mostrar "z"
+			Fin Si
+		Fin Si
+	Fin Si
+	
+FinSubProceso
+
+Algoritmo operaciones_VA
+	Escribir "ingrese el nombre de la figura a elegir: "
+	Leer x
+	calculos(x)
+	
+	Mostrar "desea repetir (S/N) "
+	Leer x
+	Mientras x = 'S' Hacer
+		Escribir "ingrese el nombre de la figura a elegir: "
+		Leer x
+		calculos(x)
+		
+		Mostrar "desea repetir (S/N) "
+		Leer x
+	FinMientras
+FinAlgoritmo
