@@ -27,7 +27,14 @@ SubProceso calculos(n)
 				Mostrar "El área del cilidnro es de ", 2 * pi * radio^2 + 2 * pi * radio * altura ," U^2"
 				Mostrar "El volumen del cilindro es de ", pi * radio^2 * altura," U^3"
 			SiNo
-				Mostrar "z"
+					Si n = "esfera" Entonces
+					Escribir "Radio de la esfera: "
+					Leer radio
+					Mostrar "El área de la esfera es de ", 4 * pi * radio^2 " U^2"
+					Mostrar "El volumen de la esfera es de ", (4/3) * pi * radio^3 " U^3"
+				SiNo
+					mostrar "Z"
+				Fin Si
 			Fin Si
 		Fin Si
 	Fin Si
